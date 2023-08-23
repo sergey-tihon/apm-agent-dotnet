@@ -58,7 +58,7 @@ must be the same as the version number of profiler zip file used.
 The general steps in configuring profiler auto instrumentation are as follows; 
 See <<instrumenting-containers-and-services>> for configuration for common deployment environments.
 
-. Download the `elastic_apm_profiler_<version>.zip` file from the https://github.com/elastic/apm-agent-dotnet/releases[Releases] page of the .NET APM Agent GitHub repository, where `<version>` is the version number to download. You can find the file under Assets.
+. Download the `elastic_apm_profiler_<version>-linux-x64.zip` file from the https://github.com/elastic/apm-agent-dotnet/releases[Releases] page of the .NET APM Agent GitHub repository, where `<version>` is the version number to download. You can find the file under Assets.
 . Unzip the zip file into a folder on the host that is hosting the application to instrument.
 . Configure the following environment variables
 +
@@ -130,7 +130,7 @@ WORKDIR /source
 RUN apk update && apk add zip curl
 
 # pull down the zip file based on ${AGENT_VERSION} ARG and unzip
-RUN curl -L -o elastic_apm_profiler_${AGENT_VERSION}.zip https://github.com/elastic/apm-agent-dotnet/releases/download/v${AGENT_VERSION}/elastic_apm_profiler_${AGENT_VERSION}.zip && \ 
+RUN curl -L -o elastic_apm_profiler_${AGENT_VERSION}.zip https://github.com/elastic/apm-agent-dotnet/releases/download/v${AGENT_VERSION}/elastic_apm_profiler_${AGENT_VERSION}-linux-x64.zip && \ 
     unzip elastic_apm_profiler_${AGENT_VERSION}.zip -d /elastic_apm_profiler_${AGENT_VERSION}
 ----
 
